@@ -1,0 +1,6 @@
+main
+  h1 Edukasyon's Classes
+
+  ul
+    - @courses.each do |course|
+      li = link_to course.name, course_path(course.id)

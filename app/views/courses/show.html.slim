@@ -1,0 +1,7 @@
+main
+  h1 = @course.name
+  
+  - if @course.description
+    p = @course.descripton
+
+  = link_to "Back to Class Index", courses_path
