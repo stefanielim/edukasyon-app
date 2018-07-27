@@ -1,0 +1,17 @@
+h1 = @course.name
+
+.actions
+  = link_to admin_courses_path, class: "ui button" do
+    i.fa.fa-chevron-left
+    | Back to Classes
+  = link_to edit_admin_course_path(@course), class: "ui button" do
+    i.fa.fa-pencil
+    | Edit This Class
+  = link_to "Delete This Class", admin_course_path(@course), method: :delete, data: {confirm: "Are you sure?"}, class: "ui button"
+
+table.ui.definition.compact.table
+  tbody
+    - @course.attributes.each do |attribute|
+      tr
+        td = attribute.first
+        td = attribute.last
