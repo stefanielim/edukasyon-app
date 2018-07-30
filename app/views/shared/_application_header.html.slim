@@ -1,0 +1,8 @@
+header.application-header
+  nav.application-navbar(role="navigation")
+    .application-branding
+      = link_to "Edukasyon.ph", root_path
+    = link_to "☰", "", class: "application-navbar__mobile-menu-icon"
+    .application-navbar__links
+      = link_to "Admin", admin_root_path, class: "application-navbar__link"
+      = link_to "Classes", courses_path, class: "application-navbar__link"
