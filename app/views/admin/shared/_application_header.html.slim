@@ -1,0 +1,7 @@
+header.application-header
+  nav.application-navbar(role="navigation")
+    .application-branding
+      = link_to "Edukasyon.ph Admin", admin_root_path
+    .application-navbar__links
+      = link_to "Main Site", root_path, class: "application-navbar__link"
+      = link_to "Classes", admin_courses_path, class: "application-navbar__link"

@@ -1,6 +1,5 @@
-main
-  h1 Edukasyon's Classes
+h1 Edukasyon's Classes
 
-  ul
-    - @courses.each do |course|
-      li = link_to course.name, course_path(course)
+ul
+  - @courses.each do |course|
+    li = link_to course.name, course_path(course)

@@ -1,0 +1,107 @@
+.application-header
+  width: 100%
+  z-index: 999
+  background: #FFFFFF
+  border-bottom: 1px solid #EEEEEE
+  // box-shadow: 0 4px 4px -4px rgba(0,0,0,0.1)
+
+.application-navbar
+  padding: 0.8em 2em
+
+.application-branding
+  display: inline-block
+  vertical-align: bottom
+  margin-right: 2em
+
+.application-branding__logo
+  display: block
+  height: 3rem
+
+.application-navbar__links
+  display: inline-block
+  vertical-align: top
+  float: right
+  a
+    display: inline-block
+    padding: 0 1em
+  .button
+    padding: 0.75em 2em
+
+.application-navbar__mobile-menu-icon
+  display: none
+  float: right
+  padding: 0.5em 0
+  &:focus,
+  &:hover,
+  &:active
+    text-decoration: none !important
+
+.application-navbar__actions
+  float: right
+  a
+    display: inline-block
+    padding: 0.75em 1.5em
+  a.button
+    margin: 0
+    &:focus,
+    &:hover,
+    &:active
+      text-decoration: none
+
+.admin-navbar
+  background: #384652
+  color: white
+  padding: 0.5em 2rem
+
+  .admin-portal,
+  .admin_navbar__links
+    display: inline-block
+
+  .admin_navbar__links
+    float: right
+    .admin-navbar__action
+      margin-left: 2em  
+
+@media (min-width: 768px) and (max-width: 835px)
+  .application-navbar__link.about-us
+    display: none
+
+@media (min-width: 768px)
+  .application-navbar__links .button
+    display: none !important
+  .application-navbar__links
+    display: inline-block !important
+
+@media (max-width: 767px)
+  .application-header.mobile
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1)
+  .application-navbar
+    padding: 1em
+
+  .application-navbar__links
+    display: none
+    float: none
+    text-align: center
+    margin-top: 0
+    a
+      display: block
+      margin: 0 !important
+      padding-top: 1.5rem
+      padding-bottom: 0
+      font-weight: normal
+
+    .button
+      display: inline-block
+      margin-top: 1em !important
+
+  .application-navbar__actions
+    display: none
+    float: none
+  
+  .mobile .application-navbar__links
+    display: block
+    
+  .application-navbar__mobile-menu-icon
+    display: inline-block
+    font-size: 22px
+    padding: 0

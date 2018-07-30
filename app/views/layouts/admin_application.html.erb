@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Admin | Edukasyon App</title>
+    <title>Admin | Edukasyon</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <%= render "admin/shared/application_header" %>
     <%= yield %>
   </body>
 </html>
