@@ -1,0 +1,25 @@
+h1 = @professor.name
+
+.actions
+  = link_to admin_professors_path, class: "ui button" do
+    i.fa.fa-chevron-left
+    | Back to Professors
+  = link_to edit_admin_professor_path(@professor), class: "ui button" do
+    i.fa.fa-pencil
+    | Edit This Professor
+  = link_to "Delete This Professor", admin_professor_path(@professor), method: :delete, data: {confirm: "Are you sure?"}, class: "ui button"
+
+table.ui.definition.compact.table
+  tbody
+    - @professor.attributes.each do |attribute|
+      tr
+        td = attribute.first
+        td = attribute.last
+
+h3 Classes
+- if @professor.courses.any?
+  ul
+    - @professor.courses.each do |course|
+      li = link_to course.name, admin_course_path(course)
+- else
+  p #{@professor.name} is not teaching any classes at the moment.

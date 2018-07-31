@@ -1,0 +1,12 @@
+h1 = @professor.name
+
+h2 Classes
+
+- if @professor.courses.any?
+  ul
+    - @professor.courses.each do |course|
+      li = link_to course.name, course_path(course)
+- else
+  p #{@professor.name} is not teaching any classes at the moment.
+
+= link_to "Back to Professor Index", professors_path

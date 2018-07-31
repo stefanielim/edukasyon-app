@@ -15,3 +15,11 @@ table.ui.definition.compact.table
       tr
         td = attribute.first
         td = attribute.last
+
+h3 Professors
+- if @course.professors.any?
+  ul
+    - @course.professors.each do |professor|
+      li = link_to professor.name, admin_professor_path(professor)
+- else
+  p #{@course.name} does not have a professor assigned yet.
