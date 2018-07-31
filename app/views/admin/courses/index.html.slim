@@ -11,6 +11,7 @@ table.ui.celled.compact.table
       th ID
       th Name
       th Description
+      th Professors
       th(colspan=3) Actions
  
   tbody
@@ -19,6 +20,13 @@ table.ui.celled.compact.table
         td = course.id
         td = link_to course.name, admin_course_path(course)
         td = course.description
+        td
+          - if course.professors.any?
+            ul
+              - course.professors.each do |professor|
+                li = link_to professor.name, admin_professor_path(professor)
+          - else
+            | N/A
         td = link_to "View", admin_course_path(course)
         td = link_to "Edit", edit_admin_course_path(course)
         td = link_to "Delete", admin_course_path(course), method: :delete, data: {confirm: "Are you sure?"}

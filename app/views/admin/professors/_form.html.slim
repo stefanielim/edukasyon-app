@@ -1,7 +1,17 @@
 = form_for [:admin, @professor], html: { class: "ui form" } do |f|
+  = hidden_field_tag "professor[course_ids][]", nil
+
   .ui.field.required
     = f.label :name
     = f.text_field :name, placeholder: "James Potter"
+
+  h3 Classes
+  .fields
+    - Course.all.order(name: :asc).each do |course|
+      .field.inline
+        .ui.checkbox
+          = check_box_tag "professor[course_ids][]", course.id, f.object.courses.include?(course)
+          label = course.name
 
   - if @professor.errors.any?
     .ui.red.message

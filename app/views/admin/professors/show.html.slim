@@ -15,3 +15,11 @@ table.ui.definition.compact.table
       tr
         td = attribute.first
         td = attribute.last
+
+h3 Classes
+- if @professor.courses.any?
+  ul
+    - @professor.courses.each do |course|
+      li = link_to course.name, admin_course_path(course)
+- else
+  p #{@professor.name} is not teaching any classes at the moment.

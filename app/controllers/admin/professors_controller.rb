@@ -46,6 +46,6 @@ class Admin::ProfessorsController < Admin::BaseController
   end
 
   def professor_params
-    params.require(:professor).permit(:name)
+    params.require(:professor).permit(:name, course_ids: [])
   end
 end

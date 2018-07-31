@@ -3,4 +3,13 @@ h1 = @course.name
 - if @course.description
   p = @course.description
 
+h2 Professors
+
+- if @course.professors.any?
+  ul
+    - @course.professors.each do |professor|
+      li = link_to professor.name, professor_path(professor)
+- else
+  p #{@course.name} does not have a professor assigned yet.
+
 = link_to "Back to Class Index", courses_path
