@@ -1,0 +1,5 @@
+h1 Edukasyon's Professors
+
+ul
+  - @professors.each do |professor|
+    li = link_to professor.name, professor_path(professor)

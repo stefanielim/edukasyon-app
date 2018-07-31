@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :courses, path: 'classes', only: [:index, :show]
+  resources :professors, only: [:index, :show]
 
   namespace :admin do
     root 'pages#dashboard'
