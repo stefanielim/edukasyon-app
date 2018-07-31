@@ -1,0 +1,8 @@
+h1 Edit Professor - #{@professor.name}
+
+.actions
+  = link_to admin_professors_path, class: "ui button" do
+    i.fa.fa-chevron-left
+    | Back to Professors
+
+= render "form"

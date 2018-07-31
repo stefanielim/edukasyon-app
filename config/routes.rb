@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'pages#dashboard'
     resources :courses, path: 'classes'
+    resources :professors
   end
 end

@@ -1,0 +1,12 @@
+= form_for [:admin, @professor], html: { class: "ui form" } do |f|
+  .ui.field.required
+    = f.label :name
+    = f.text_field :name, placeholder: "James Potter"
+
+  - if @professor.errors.any?
+    .ui.red.message
+      ul
+        - @professor.errors.full_messages.each do |message|
+          li = message
+
+  = f.submit "Submit", class: "ui button"
